@@ -11,12 +11,18 @@ namespace MadLibs.Controllers
       return View();
     }
 
-    [Route("/letter")]
-    public ActionResult MadLibsLetter()
+    [Route("/letterdisplay")]
+    public ActionResult LetterDisplay(string recipient)
     {
       InputForLetter userInputWords = new InputForLetter();
-      userInputWords.Recipient = "Homer";
+      userInputWords.Recipient = recipient;
       return View(userInputWords);
+    }
+
+    [Route("/letterform")]
+    public ActionResult LetterForm()
+    {
+      return View();
     }
 
     [Route("/hello")]
