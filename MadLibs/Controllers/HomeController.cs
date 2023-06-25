@@ -11,6 +11,12 @@ namespace MadLibs.Controllers
       return View();
     }
 
+    [Route("/letterform")]
+    public ActionResult LetterForm()
+    {
+      return View();
+    }
+
     [Route("/letterdisplay")]
     public ActionResult LetterDisplay(string recipient, string nameOfPlace, string topicToLearn, string nounSingular, string sender)
     {
@@ -23,10 +29,20 @@ namespace MadLibs.Controllers
       return View(userInputWords);
     }
 
-    [Route("/letterform")]
-    public ActionResult LetterForm()
+    [Route("/hallpassform")]
+    public ActionResult HallPassForm()
     {
       return View();
+    }
+
+    [Route("/hallpassdisplay")]
+    public ActionResult HallPassDisplay(string hallPassRecipient, string adjective, string noun)
+    {
+      InputForHallPass userInputWords = new InputForHallPass();
+      userInputWords.HallPassRecipient = hallPassRecipient;
+      userInputWords.Adjective = adjective;
+      userInputWords.Noun = noun;
+      return View(userInputWords);
     }
 
     [Route("/hello")]
